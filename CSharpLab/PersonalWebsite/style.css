@@ -1,0 +1,107 @@
+
+
+
+   
+   .textBlue {
+   color:blue;
+   }
+   
+   .textCenter{
+       text-align: center;
+   }
+   
+
+   #bold{
+       font-weight: bold;
+   }
+
+  
+
+ .webbody {
+    text-align: center;
+   /* background: url(sky.jpg);*/
+    background-size: cover;
+    color: white;
+  }
+
+  .myimg{
+    margin-top: 50px;
+    border-radius: 50%;
+    
+    height:300px;
+  }
+
+  .footer{
+    margin-bottom: 50px;
+    margin-right: 100px;
+    display: block;
+    color: blue;
+    text-align:right;
+  }
+
+  .pad{
+    padding: 50px,300px;
+  }
+
+  .magin{
+   
+  margin-top: 200px;
+  margin-bottom: 100px;
+  margin-right: 300px;
+  margin-left: 300px;
+  background-color: lightblue;
+  }
+
+  .navbar {
+    overflow: hidden;
+   background-color: rgb(159, 184, 205);
+    position: fixed;
+    top: 0;
+  width:800px;
+  display:flex;
+  justify-content:space-between;
+   
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: #6d3e3e;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+  }
+
+  .navWeb{
+   margin: 14px 16px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 5px;
+    
+  }
+
+  .grid-item{
+   
+    height:fit-content;
+    padding: 50px;
+    font-size: 15px;
+    text-align: center;
+  }
+  
+
+  .navbarhome{
+   height: 50px;
+    font-size: 25px;
+    background-color: antiquewhite;
+    position: fixed;
+    top: 0;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  text-align: center;
+  }
+

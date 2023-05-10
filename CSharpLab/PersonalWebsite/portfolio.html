@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body class="magin">
+    
+    <div class="navbar">
+        <h2>My Projects</h2>
+        <a href="#PointOfSaleTerminal">PointOfSaleTerminal</a>
+        <a href="#StudentDatabase">StudentDatabase</a>
+        <a href="#ShoppingList">ShoppingList</a>
+    </div>
+    
+       <section>
+       <a href="https://github.com/Betsywyd/PointofSaleTerminalProject"><li style="font-size:x-large;" id="PointOfSaleTerminal">PointOfSaleTerminal</li></a>
+       <p id="bold">Description about project: </p>
+       <p> It's a self-service terminal for some kind of retail store.  </p>
+       <p>our solution must include some kind of a product class with a name, category, description, and price for each item. 
+        12 items minimum; stored in a list.
+        Present a menu to the user and let them choose an item (by number or letter).
+        Allow the user to choose a quantity for the item ordered.
+        Give the user a line total (item price * quantity).
+        Either through the menu or a separate question, allow them to re-display the menu and to complete the purchase.
+        Give the subtotal, sales tax, and grand total.  (Remember rounding issues the Math library will be handy!)
+        Ask for payment type—cash, credit, or check
+        For cash, ask for amount tendered and provide change.
+        For check, get the check number.
+        For credit, get the credit card number, expiration, and CVV.
+        At the end, display a receipt with all items ordered, subtotal, grand total, and appropriate payment info.
+        Return to the original menu for a new order.  (Hint: you’ll want an array or List to keep track of what’s been ordered!)
+        </p>
+        <p>(Moderate) Store your list of products in a text file and then include an option to add to the product list, which then outputs to the product file.
+            (Buff) Do a push up every time you get an exception or error while running your code
+            
+            </p>
+       <a href="https://github.com/Betsywyd/Student-Database"><li style="font-size:x-large;" id="StudentDatabase">StudentDatabase
+
+       </li></a>
+       <p id="bold">Description about project: </p>
+       <p> It's an application can search student's hometown and food in a class.  </p>
+       <p>Make sure the arrays are the same size.
+        Let the user enter a number from 1 up to and including the length of the array. To get the index, subtract 1 from the number they entered.
+        For the valid category: You might create a separate program to test out some code that uses a while loop and asks for either “Hometown” or “Favorite Food.” And only finishes the loop if either of these two is entered. Once you have it working, copy the code over to your “real” code.
+        Make it easy for the user – tell them what information is available
+        Try to use good grammar. Make your messages polite.
+        
+        Extra Challenges:
+        1 Point: Provide an option where the user can see a list of all students.
+        2 Points: Allow the user to search by student name (Good challenge but difficult!)
+        1 Point: Category names: Allow uppercase and lowercase; allow portion of word such as "Food" instead of "Favorite Food"
+        </p>
+        <a href="https://github.com/Betsywyd/Shopping-List"><li style="font-size:x-large" id="ShoppingList">ShoppingList</li></a>
+       <p id="bold">Description about project: </p>
+       <p>Display at least 8 item names and prices.
+        Ask the user to enter an item name
+        If that item exists, display that item and price and add that item to the user’s order.
+        If that item doesn’t exist, display an error and re-prompt the user.  (Display the menu again if you’d like.)
+        After adding one to their order, ask if they want to add another. If so, repeat.  (User can enter an item more than once; we’re not keeping track of quantity at this point.)
+        When they’re done adding items, display a list of all items ordered with prices in columns.
+        Display the sum price of the items ordered.
+        
+        Build Specifications/Grading Points
+        Application uses a Dictionary<string, decimal> to keep track of the menu of items.  You can code it with literals. (2 points for instantiation & initialization)
+        Use a List<string> for the shopping list and store the name of the items the customer ordered.
+        Application takes item name input and:
+        Responds if that item doesn’t exist (1 point)
+        Adds its name to the relevant List if it does (1 point)
+        Application asks user if they want to quit or continue, and loops appropriately (1 point)
+        Application displays list of items with their prices (2 points)
+        Application displays the correct total predict for the list (1 point)
+        To determine the sum: Loop through the shopping list’s List collection, obtain the name, and look up the name’s price in the Menu Dictionary.
+        
+        Extended Challenges:
+        Implement a menu system so the user can enter just a letter or number for the item.
+        Display the most and least expensive item ordered.
+        Display the items ordered in order of price.
+        </p>
+    </section>
+
+    <footer class="footer">
+        <p>Author: Yiding<br>
+        <a style="color: black;" href="mailto:yiding.wang82@gmail.com">yiding.wang82@gmail.com</a></p>
+      </footer>
+    
+</body>
+</html>
