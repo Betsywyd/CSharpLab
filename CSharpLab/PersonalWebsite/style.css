@@ -73,8 +73,10 @@
     font-size: 25px;
   }
 
-  .navWeb{
-   margin: 14px 16px;
+  .navWeb a{
+   display: inline-block;
+  font-size: 30px;
+  padding: 50px;
   }
 
   .grid-container {
