@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form autocomplete="off" asp-method="post" asp-action="UserResult">
+    <h2>Pease enter firstname:</h2>
+    <input type="text" name="UserFirstName" placeholder="Enter firstname:"/>
+     <h2>Please enter lastname:</h2>
+    <input type="text" name="UserLastName" placeholder="Enter lastname:"/>
+     <h2>Please enter county:</h2>
+      <select name="Country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+    <h2>Please choose gender:</h2>
+      <label for="male">Male</label>
+        <input type="radio" name="Gender" id="male" value="male" checked>
+        <label for="female">Female</label>
+        <input type="radio" name="Gender" id="female" value="female">
+    
+     <h2>Please enter email:</h2>
+    <input type="email" name="UserEmail" autocomplete="off" placeholder="Email:"/>
+     <h2>Please enter password:</h2>
+     <p style="font-size:small">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</p>
+    <input type="password" name="Password" autocomplete="off" placeholder="Password:" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+    <input type="submit"/>
+    
+</form>
