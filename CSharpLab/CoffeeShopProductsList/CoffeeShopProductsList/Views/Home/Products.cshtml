@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    foreach(Product P in Model)
+    {
+        <h2>@P.Name </h2>
+        <p>Category---- @P.Category</p>
+        <p>Description---- @P.Description</p>
+        <p>Price----@P.Price</p>
+    }
+}
