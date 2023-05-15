@@ -15,7 +15,8 @@ namespace CoffeeShopProductsList.Controllers
         }
         public IActionResult CoffeeProductsIndex()
         {
-            return View();
+            List<Product> result = _productsDbContext.Products.ToList();
+            return View(result);
         }
 
         public IActionResult CoffeeProductsDetails()
@@ -23,10 +24,11 @@ namespace CoffeeShopProductsList.Controllers
             List<Product> result = _productsDbContext.Products.ToList();
             return View(result);
         }
-        public IActionResult DisplayDetails(Product e)
+        public IActionResult DisplayDetails(int id)
         {
-          
-            return View(e);
+            Product model = _productsDbContext.Products.FirstOrDefault(e => e.Id == id);
+           
+            return View(model);
         }
 
       

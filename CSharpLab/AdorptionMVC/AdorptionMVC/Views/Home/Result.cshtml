@@ -1,0 +1,15 @@
+﻿@model List<Animal>
+
+@foreach(Animal a in Model) 
+{
+    <div>
+    <p>@a.Breed</p>
+    <p>@a.Id</p>
+    <p>@a.Img</p>
+    <p>@a.Name</p>
+    <p>@a.Description</p>
+    <p>@a.Age</p>
+    <a asp-action="Adopt" asp-route-Breed="@a.Breed">Adoption</a>
+    </div>
+}
+

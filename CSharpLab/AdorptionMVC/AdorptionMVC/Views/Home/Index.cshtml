@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Animal>
+
+<p>All animals:</p>
+@foreach(Animal a in Model)
+{
+    <div>
+        <h3>@a.Id</h3>
+        <p>@a.Img</p>
+        <p>@a.Name</p>
+        <p>@a.Description</p>
+        <p>@a.Breed</p>
+        <p>@a.Age</p>
+    </div>
+}
+
+
+<form asp-method="post" asp-action="Result" asp-controller="Home">
+<p>Select breed: </p>
+<select name="Breed">
+      
+             @{List<string> bre=new List<string>();
+             
+             foreach(Animal a in Model)
+            {
+                if(!bre.Contains(@a.Breed))
+                {
+                    bre.Add(@a.Breed);
+                     <option><a asp-controller="Home" asp-route-Breed="@a.Breed" >@a.Breed</a></option>
+                }
+            }
+        }
+  
+</select>
+<input type="submit" />
+
+</form>
