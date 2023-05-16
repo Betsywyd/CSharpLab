@@ -1,0 +1,11 @@
+﻿@model Hand
+
+@foreach(Card c in Model.cards){
+  <a asp-action="CardsDetails" asp-route-code="@c.code"><img src="@c.image"></img></a> 
+   <p>@c.code</p>
+   <p>@c.value</p>
+   <p>@c.suit</p>
+   <br/>
+}
+
+<a asp-action="ShowHand">Show next 5 cards:</a>
