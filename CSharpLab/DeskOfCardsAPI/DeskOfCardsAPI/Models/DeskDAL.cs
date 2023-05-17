@@ -24,5 +24,17 @@ namespace DeskOfCardsAPI.Models
 
         return h;
     }
+        //public Card GetCard(string id,string code)
+        //{
+        //    string url = $"https://deckofcardsapi.com/api/deck/{id}/draw/?count=5";
+        //    RestClient client = new RestClient(url);
+        //    RestRequest request = new RestRequest();
+
+        //    Hand h = client.Get<Hand>(request);
+        //    Card c = h.cards.FirstOrDefault(card => card.code == code);
+      
+        //    return c;
+        //}
+
     }
 }

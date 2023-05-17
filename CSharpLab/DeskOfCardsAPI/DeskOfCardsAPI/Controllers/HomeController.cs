@@ -30,8 +30,10 @@ namespace DeskOfCardsAPI.Controllers
    
         public IActionResult CardsDetails(string id,string code)
         {
-            Images i= DeskAPI.GetHand(id).cards.FirstOrDefault(card => card.code==code).images;
-            return View(i);
+            Hand h = DeskAPI.GetHand(id);
+            Card c = h.cards.FirstOrDefault(card => card.code == code);
+           
+            return View(c.images);
         }
 
         public IActionResult Privacy()
