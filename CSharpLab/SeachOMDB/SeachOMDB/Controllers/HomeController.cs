@@ -19,7 +19,6 @@ namespace SeachOMDB.Controllers
             return View();
         }
 
-      
 
         [HttpGet]
         public IActionResult MovieSearchForm()
