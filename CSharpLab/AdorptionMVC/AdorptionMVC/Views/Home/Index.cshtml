@@ -1,11 +1,8 @@
 ﻿
-@{
-    ViewData["Title"] = "Home Page";
-}
 
 @model List<Animal>
 
-<p>All animals:</p>
+@*<p>All animals:</p>
 @foreach(Animal a in Model)
 {
     <div>
@@ -16,24 +13,18 @@
         <p>@a.Breed</p>
         <p>@a.Age</p>
     </div>
-}
+}*@
 
 
 <form asp-method="post" asp-action="Result" asp-controller="Home">
 <p>Select breed: </p>
 <select name="Breed">
-      
-             @{List<string> bre=new List<string>();
-             
-             foreach(Animal a in Model)
+        
+             @foreach(Animal a in Model)
             {
-                if(!bre.Contains(@a.Breed))
-                {
-                    bre.Add(@a.Breed);
-                     <option><a asp-controller="Home" asp-route-Breed="@a.Breed" >@a.Breed</a></option>
-                }
+      <option><a asp-route-Id="@a.Breed" >@a.Breed</a></option>
             }
-        }
+        
   
 </select>
 <input type="submit" />

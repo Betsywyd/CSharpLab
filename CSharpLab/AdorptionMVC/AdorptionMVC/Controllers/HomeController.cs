@@ -18,9 +18,11 @@ namespace AdorptionMVC.Controllers
 
         public IActionResult Index()
         {
-           
-            List<Animal> a = _context.Animals.ToList();
-            return View(a);
+            List<Animal> alist = _context.Animals.ToList();
+            List<Animal> br = alist.DistinctBy(i => i.Breed).ToList();
+
+            return View(br);
+      
         }
     
 
@@ -29,6 +31,7 @@ namespace AdorptionMVC.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult Add(Animal a)
         {
             _context.Animals.Add(a);
@@ -36,29 +39,28 @@ namespace AdorptionMVC.Controllers
             return RedirectToAction("Add");
         }
 
+        public IActionResult Add()
+        {
+
+            return View();
+        }
         public IActionResult Adopt(int id)
         {
-            Animal a = _context.Animals.FirstOrDefault(e => e.Id == id);
-            _context.Animals.Remove(a);
+            Animal e= _context.Animals.Find(id);
+            _context.Animals.Remove(e);
             _context.SaveChanges();
 
             return RedirectToAction("Index");
         }
+       
 
 
-        public IActionResult Result(string bre)
+        public IActionResult Result(string breed)
         {
             List<Animal> alist = _context.Animals.ToList();
-            List <Animal> re= new List<Animal>();
-            for (int i = 0; i < alist.Count(); i++)
-            {
-                if (alist[i].Breed == bre)
-               {
-                    re.Add(alist[i]);
-                }
- 
-            }
-                return View(re);
+            List <Animal> br= _context.Animals.Where(i => i.Breed == breed).ToList();
+          
+                return View(br);
         
             //Animal a = _context.Animals.FirstOrDefault(e => e.Id == id);
         }
