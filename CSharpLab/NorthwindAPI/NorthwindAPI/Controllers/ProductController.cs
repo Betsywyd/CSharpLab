@@ -10,15 +10,15 @@ namespace NorthwindAPI.Controllers
     public class ProductController : Controller
     {
         NorthwndContext db = new NorthwndContext();
-        [HttpGet("/minUnitPrice&minUnitsInStock")]
-        public short GetProduct(Product p)
-        {
+        //[HttpGet("/minUnitPrice&minUnitsInStock")]
+        //public short GetProduct(Product p)
+        //{
          
           
-            List <Product> list = db.Products.Where(i=>i.UnitPrice.Min()).ToList();
+        //    List <Product> list = db.Products.Where(i=>i.UnitPrice.Min()).ToList();
 
 
-        }
+        //}
 
         [HttpPost("addbyCategory")]
         public string AddProduct(Product p)
