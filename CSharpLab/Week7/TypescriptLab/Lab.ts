@@ -34,10 +34,13 @@ if(mountains[i].height>mTallest){
  return tallestName;
 }
 
+let tallest:string=findNameOfTallestMountain(mountains);
+console.log(tallest)
+
 let output=document.getElementById("Tallest");
 output.innerText="Tallest mountain is "+findNameOfTallestMountain(mountains);
 
-
+//---------------------------------------------------------------------------------------------------------------------------------------------
 
 interface Product{
     name: string, 
@@ -70,7 +73,7 @@ let output2=document.getElementById("AvgPrice");
 output2.innerText="avgPrice is : " +calcAverageProductPrice(products);
 console.log(p);
 
-
+//-----------------------------------------------------------------------------------------------------------------------
 
 interface InventoryItem{
     product: Product, 

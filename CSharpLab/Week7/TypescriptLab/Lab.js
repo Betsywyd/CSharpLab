@@ -21,6 +21,8 @@ function findNameOfTallestMountain(mountains) {
     }
     return tallestName;
 }
+var tallest = findNameOfTallestMountain(mountains);
+console.log(tallest);
 var output = document.getElementById("Tallest");
 output.innerText = "Tallest mountain is " + findNameOfTallestMountain(mountains);
 var products = [];

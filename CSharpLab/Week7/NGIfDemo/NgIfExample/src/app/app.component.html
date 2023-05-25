@@ -1,0 +1,37 @@
+<h2>Employees</h2>
+
+<!-- <div *ngIf="e.salary > 10000">-->
+<div *ngFor="let e of employees";index as i>
+  <div >
+   <p>Name:{{e.name}}</p>
+   <p>Title:{{e.title}}</p>
+   <p>Salary:{{e.salary}}</p>
+   <button (click)="editEmployee(i)">Edit:{{e.name}}</button>
+   <div *ngIf="e.isEditing">
+
+   </div>
+ </div>
+</div>
+
+<button (click)="toggleForm()">Toggle new employee Form</button>
+<div *ngIf="showForm">  <!--also can use form-->
+  <p>Name:</p>
+  <input type="text" name="name"[(ngModel)]="newEmployee.name">
+  <br/>
+  <p>Title:</p>
+  <input type="text" name="title" [(ngModel)]="newEmployee.title">
+  <br/>
+  <p>Salary</p>
+  <input type="number" name="salary" min="0" [(ngModel)]="newEmployee.salary">
+  <br/>
+  <p>Age</p>
+  <input type="number" name="age" min="0" [(ngModel)]="newEmployee.age">
+  <br/>
+  <button>Create new employee</button>
+  <button (Click)="createNewEmployee()"></button>
+</div>
+
+<p>Employee Name:{{newEmployee.name}}</p>
+<p>Employee Name:{{newEmployee.title}}</p>
+<p>Employee Name:{{newEmployee.salary}}</p>
+<p>Employee Name:{{newEmployee.age}}</p>

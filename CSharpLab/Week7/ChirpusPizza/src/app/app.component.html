@@ -1,0 +1,21 @@
+<h2>Welcome to Chirpus Pizza</h2>
+
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Category</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let m of menuitems">
+    <th>{{m.Name}}</th>
+    <th>{{m.Category}}</th>
+    <th>{{m.Price}}</th>
+  </tr>
+</table>
+
+<div *ngFor="let c of getUniqueCategory()">
+<div *ngFor="let m of getByCategory(c)">
+<h2>{{m.Name}}</h2>
+<h2>{{m.Price}}</h2>
+</div>
+</div>
