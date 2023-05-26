@@ -1,4 +1,21 @@
-
+<h2>TODO List</h2>
+<p>A place to store your todos</p>
+<h2  *ngIf="allCompleted()">Congrats,You completed all task!</h2>
 <ol >
-  <li *ngFor="let t of todos; index as i"> Task:{{t.task}} <button (click)>Complete:{{t.completed}}</button></li>
+  <li *ngFor="let t of todos; index as i" >
+    
+    <button *ngIf="!t.completed" (click)="toComplete(i)">Complete</button>
+    <del *ngIf="t.completed"> Task:{{t.task}} </del><span *ngIf="!t.completed"> Task:{{t.task}} </span>
+    
+   
+  </li>
 </ol>
+
+<p>Add your todos:</p>
+
+<button *ngIf="!showForm" (click)="toggleForm()">Add</button>
+<div *ngIf="showForm">
+<p>Enter your task:</p>
+<input type="text" name="task" [(ngModel)]="newTodo.task"/>
+<button  (click)="addTodo()">Add task:{{newTodo.task}}</button>
+</div>
