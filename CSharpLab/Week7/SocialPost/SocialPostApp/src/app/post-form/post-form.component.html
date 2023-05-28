@@ -1,0 +1,13 @@
+
+<div *ngIf="display">
+  <p>Title:</p> 
+<input type="type" name="title" [(ngModel)]="newPost.title">
+
+<p>Thought:</p>
+<input type="type" name="thought" [(ngModel)]="newPost.thought">
+
+<button (click)="submitPost()">Add Post</button>
+
+</div>
+<br/>
+<button (click)="toggleDisplay()" *ngIf="!display" >Add New Post</button>

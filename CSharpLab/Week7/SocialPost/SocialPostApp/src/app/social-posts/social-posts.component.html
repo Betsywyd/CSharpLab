@@ -1,0 +1,20 @@
+
+
+<div *ngFor="let p of posts; index as i" >
+    <div *ngIf="showAll">
+    <p><b>Post Title:{{p.title}}</b></p>
+    <p>Thought:{{p.thought}}</p>
+    
+    <button (click)="showSingle(i)">Show Single Post</button>
+    <br/>
+    <button (click)="deletePost(i)">Delete:{{p.title}}</button>
+    </div>
+    
+    <app-single-post [post]="p" *ngIf="!showAll" (deleteValue)="deleteSinglePost($event,i)" ></app-single-post>
+    <button (click)="showList()" *ngIf="p.beShow && !showAll">Return to Posts List</button>
+   
+</div>
+
+<br/>
+
+<app-post-form (changed)="addNewPost($event)" *ngIf="showAll"></app-post-form>

@@ -6,6 +6,7 @@
     
     <button *ngIf="!t.completed" (click)="toComplete(i)">Complete</button>
     <del *ngIf="t.completed"> Task:{{t.task}} </del><span *ngIf="!t.completed"> Task:{{t.task}} </span>
+    <button (click)=" removeTask(i)">X</button>
     
    
   </li>

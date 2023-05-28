@@ -13,7 +13,6 @@ export class AppComponent {
 todos:Todo[]=[{task:"fold clothes",completed:true},{task:"put clothes in dresser",completed:false},{task:"relax",completed:false},{task:"pet dog",completed:true},{task:"pet cat",completed:false},{task:"be awesome",completed:true}];
 newTodo:Todo={task:"",completed:false};
 
-//deleted:boolean=false;
 
 toComplete(i:number){
  this.todos[i].completed=true;
@@ -23,13 +22,14 @@ toggleForm():void{
 this.showForm=!this.showForm;
 }
 
-//  removeTask(i:number):void{
-
-// for(let j=0;j<this.todos.length;j++){
-//   this.deleted=false;
-// }
-// this.todos.slice(i,1);
-// }
+ removeTask(i:number):void{
+for(let j=0;j<this.todos.length;j++){
+  this.todos[j].deleted=false;
+}
+this.todos[i].deleted=true;
+this.todos.slice(i,1);
+this.todos[i].deleted=false;
+}
 
 addTodo(){
  //this.isAdding=true;
