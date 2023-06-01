@@ -10,7 +10,7 @@
     <button (click)="deletePost(i)">Delete:{{p.title}}</button>
     </div>
     
-    <app-single-post [post]="p" *ngIf="!showAll" (deleteValue)="deleteSinglePost($event,i)" ></app-single-post>
+    <app-single-post [post]="p" *ngIf="!showAll" (deleteValue)="deleteSinglePost(i)" ></app-single-post>
     <button (click)="showList()" *ngIf="p.beShow && !showAll">Return to Posts List</button>
    
 </div>
@@ -18,3 +18,5 @@
 <br/>
 
 <app-post-form (changed)="addNewPost($event)" *ngIf="showAll"></app-post-form>
+
+<!--  -->

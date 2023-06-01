@@ -15,7 +15,7 @@ export class PostFormComponent {
 
 
   toggleDisplay():void{
-  this.display=true;
+  this.display=!this.display;
   }
 
   submitPost(){

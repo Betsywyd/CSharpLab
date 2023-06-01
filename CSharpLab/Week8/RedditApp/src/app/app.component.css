@@ -1,0 +1,49 @@
+.font{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+.linksize{
+        font-size: 18px;
+}
+.centerElement{
+    margin-right: auto;
+    margin-left:auto;
+}
+
+#PageWidth{
+    width: 60%;
+}
+
+.postWidth{
+width:60%;
+}
+
+.centerText{
+    text-align: center;
+}
+
+.CenterImage{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.postSpacing{
+    margin-bottom: 55px;
+}
+
+.border{
+    border:2px solid black;
+}
+
+.postPadding{
+    padding:20px;
+    padding-top: 0px;
+}
+
+.postBackground{
+    background-color: #5e71f7;
+}
+
+a{
+    color:white;
+}

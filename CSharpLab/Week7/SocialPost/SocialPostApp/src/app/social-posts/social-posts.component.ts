@@ -39,13 +39,12 @@ addNewPost(p:Post):void{
 
 deleteSingle:Post={title:"",thought:"",beShow:true};
 
-deleteSinglePost(deleteSingle:Post,index:number){
-  this.posts[index]=deleteSingle;
+deleteSinglePost(index:number){
    this.posts.slice(index,1);
-   for(let i=0;i<this.posts.length;i++){
-    this.posts[i].beShow=false;
-  }
-  this.showAll=true;
+  //  for(let i=0;i<this.posts.length;i++){
+  //   this.posts[i].beShow=false;
+  // }
+  // this.showAll=true;
 }
 
 }
