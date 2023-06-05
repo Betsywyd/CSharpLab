@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Donut, Result } from './donut';
+import { Donut, DonutDetails, Result } from './donut';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DonutService {
-  url:string ="https://grandcircusco.github.io/demo-apis/donuts.json";
+  url:string ="https://grandcircusco.github.io/demo-apis/donuts";
   // https://grandcircusco.github.io/demo-apis/donuts/1.json
 
 
@@ -15,11 +15,11 @@ export class DonutService {
   constructor(private http:HttpClient) { }
 
   getDonuts():Observable<Donut>{
-    return this.http.get<Donut>(this.url);
+    return this.http.get<Donut>(this.url+".json");
   }
 
-  // getDonutById(id:number):Observable<Result>{
-  //   return this.http.get<Result>(this.url+id+".json");
-  // }
+  getDonutById(id:number):Observable<DonutDetails>{
+    return this.http.get<DonutDetails>(this.url+id+".json");
+  }
 
 }

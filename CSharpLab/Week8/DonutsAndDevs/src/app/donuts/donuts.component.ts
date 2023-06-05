@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DonutService } from '../donut.service';
-import { Donut, Result } from '../donut';
+import { Donut, DonutDetails, Result } from '../donut';
 
 
 @Component({
@@ -11,8 +11,8 @@ import { Donut, Result } from '../donut';
 export class DonutsComponent {
 
   donutResult:Result[]=[];
-  selected:Result={} as Result;
-
+ 
+  selected:DonutDetails={} as DonutDetails;
   constructor(private donuts: DonutService){
     this.donuts.getDonuts().subscribe(
       (result) => {
@@ -21,6 +21,15 @@ export class DonutsComponent {
     )
   }
    
+ 
+  getDonutDetail(id:number){
+    this.donuts.getDonutById(this.selected.id).subscribe(
+      (result)=>{
+        this.selected=result;
+      }
+    )
+      }
+      
 
 }
 

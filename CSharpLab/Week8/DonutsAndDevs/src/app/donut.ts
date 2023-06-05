@@ -35,3 +35,31 @@ export class Convert {
         return JSON.stringify(value);
     }
 }
+
+// To parse this data:
+//
+//   import { Convert, DonutDetails } from "./file";
+//
+//   const donutDetails = Convert.toDonutDetails(json);
+
+export interface DonutDetails {
+    id:                number;
+    ref:               string;
+    name:              string;
+    calories:          number;
+    extras:            string[];
+    photo:             string;
+    photo_attribution: string;
+}
+
+// Converts JSON strings to/from your types
+export class ConvertDetail {
+    public static toDonutDetails(json: string): DonutDetails {
+        return JSON.parse(json);
+    }
+
+    public static donutDetailsToJson(value: DonutDetails): string {
+        return JSON.stringify(value);
+    }
+}
+

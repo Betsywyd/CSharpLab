@@ -1,0 +1,8 @@
+﻿@model Employee 
+
+<form method="post"  asp-action="Update" asp-controller="Application">
+    Name:<input type="text" name="Name" placeholder="@Model.Name" />
+    Hours:<input type="number" placeholder="@Model.Hours"  name="Hours" max=40 />
+    Title:<input type="text" placeholder="@Model.Title"  name="Title" maxlength="40" />
+    <input type="submit" />
+</form>

@@ -1,0 +1,19 @@
+<table>
+    <tr>
+        <th>
+            Description 
+        </th>
+        <th>Restaurant </th>
+        <th>Rating</th>
+        <th>OrderAgain</th>
+    </tr>
+    <tr *ngFor="let o of orders">
+        <td> {{o.description }}</td>
+        <td>{{o.restaurant}}</td>
+        <td>{{o.rating}}</td>
+        <td>{{o.orderAgain}}</td>
+        <button (click)="deleteOrder(o.id)">Delete:{{o.restaurant}}</button>
+    </tr>
+</table>
+
+<app-add-order-form (changed)="addNew($event)"></app-add-order-form>

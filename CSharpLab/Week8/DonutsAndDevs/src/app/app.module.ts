@@ -9,7 +9,9 @@ import { Route, RouterModule } from '@angular/router';
 import { FamousPeopleComponent } from './famous-people/famous-people.component';
 import { FamousPersonDetailComponent } from './famous-person-detail/famous-person-detail.component';
 
-const routes:Route[]=[{path:"donutsList",component:DonutsComponent},{path:"famousPeople",component:FamousPeopleComponent}]
+const routes:Route[]=[{path:"donutsList",component:DonutsComponent},
+{path:"famousPeople",component:FamousPeopleComponent},
+{path:"donutDetails",component:DonutDetailComponent}]
 
 @NgModule({
   declarations: [

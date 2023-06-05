@@ -1,0 +1,14 @@
+﻿@model List<Employee>
+
+    @foreach(Employee e in Model)
+    {
+    <p>Employee Name:@e.Name</p>
+    <p>Title:@e.Title</p>
+    <p>Hours:@e.Id</p>
+    
+    <a asp-action="Update" asp-controller="Application" asp-route-employeeId="@e.Id"><p>Update  @e.Name</p></a>
+  
+    <a asp-action="Delete" asp-controller="Application" asp-route-employeeId="@e.Id"><p>Delete  @e.Name</p></a>
+
+    }
+

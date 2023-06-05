@@ -1,0 +1,12 @@
+<p>Add New Order</p>
+<p>Description</p>
+<input type="text" name="description" [(ngModel)]="newOrder.description">
+<p>Restaurant Name</p>
+<input type="text" name="restaurant" [(ngModel)]="newOrder.restaurant">
+<p>Rating</p>
+<input type="number" name="rating" max="5"  placeholder="1-5" [(ngModel)]="newOrder.rating">
+<p>OrderAgain:<input type="checkbox" name="orderAgain" [(ngModel)]="newOrder.orderAgain"></p>
+<p></p>
+<br>
+
+<button (click)="addNew()">Submit</button>
