@@ -1,6 +1,6 @@
-using RestaurantFavesBackEnd.Model;
+using ToDoListBackEnd.Models;
 
-namespace RestaurantFavesBackEnd
+namespace ToDoListBackEnd
 {
     public class Program
     {
@@ -14,7 +14,7 @@ namespace RestaurantFavesBackEnd
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<OrderDbContext>();
+            builder.Services.AddDbContext<ToDoListContext>();
 
             builder.Services.AddCors(options =>
             {
@@ -34,8 +34,7 @@ namespace RestaurantFavesBackEnd
 
             var app = builder.Build();
             app.UseCors("AllowAngularOrigins");
-            //var cors = require('cors');
-            //app.use(cors());
+
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -48,10 +47,10 @@ namespace RestaurantFavesBackEnd
 
             app.UseAuthorization();
 
+
             app.MapControllers();
 
             app.Run();
         }
     }
 }
-

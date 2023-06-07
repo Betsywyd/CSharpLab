@@ -15,7 +15,7 @@ export class RestaurantFavesService {
 
   constructor(private http:HttpClient) { }
 
-  getAllOrders():Observable<any>{
+  getAllOrders():Observable<Order[]>{
     return this.http.get<Order[]>(this.url+"allOrders");
   }
   
