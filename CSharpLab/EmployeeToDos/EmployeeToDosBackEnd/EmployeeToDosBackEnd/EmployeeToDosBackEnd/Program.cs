@@ -1,6 +1,6 @@
 using EmployeeToDosBackEnd.Models;
 
-namespace EmployeeToDos
+namespace EmployeeToDosBackEnd
 {
     public class Program
     {

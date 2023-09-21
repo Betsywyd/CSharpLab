@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using EmployeeToDosBackEnd.Data;
 using EmployeeToDosBackEnd.Models;
 
 namespace EmployeeToDosBackEnd.Controllers
@@ -14,33 +13,33 @@ namespace EmployeeToDosBackEnd.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        private readonly EmployeeToDosBackEndContext _context;
+        private readonly EmployeeToDosContext _context;
 
-        public EmployeesController(EmployeeToDosBackEndContext context)
+        public EmployeesController(EmployeeToDosContext context)
         {
             _context = context;
         }
 
         // GET: api/Employees
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployee()
+        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
-          if (_context.Employee == null)
+          if (_context.Employees == null)
           {
               return NotFound();
           }
-            return await _context.Employee.ToListAsync();
+            return await _context.Employees.ToListAsync();
         }
 
         // GET: api/Employees/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Employee>> GetEmployee(int id)
         {
-          if (_context.Employee == null)
+          if (_context.Employees == null)
           {
               return NotFound();
           }
-            var employee = await _context.Employee.FindAsync(id);
+            var employee = await _context.Employees.FindAsync(id);
 
             if (employee == null)
             {
@@ -86,11 +85,11 @@ namespace EmployeeToDosBackEnd.Controllers
         [HttpPost]
         public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
         {
-          if (_context.Employee == null)
+          if (_context.Employees == null)
           {
-              return Problem("Entity set 'EmployeeToDosBackEndContext.Employee'  is null.");
+              return Problem("Entity set 'EmployeeToDosContext.Employees'  is null.");
           }
-            _context.Employee.Add(employee);
+            _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetEmployee", new { id = employee.Id }, employee);
@@ -100,17 +99,17 @@ namespace EmployeeToDosBackEnd.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployee(int id)
         {
-            if (_context.Employee == null)
+            if (_context.Employees == null)
             {
                 return NotFound();
             }
-            var employee = await _context.Employee.FindAsync(id);
+            var employee = await _context.Employees.FindAsync(id);
             if (employee == null)
             {
                 return NotFound();
             }
 
-            _context.Employee.Remove(employee);
+            _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -118,7 +117,7 @@ namespace EmployeeToDosBackEnd.Controllers
 
         private bool EmployeeExists(int id)
         {
-            return (_context.Employee?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Employees?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

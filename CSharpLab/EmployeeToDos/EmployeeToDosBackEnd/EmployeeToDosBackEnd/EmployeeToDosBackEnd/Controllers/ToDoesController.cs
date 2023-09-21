@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using EmployeeToDosBackEnd.Data;
 using EmployeeToDosBackEnd.Models;
 
 namespace EmployeeToDosBackEnd.Controllers
@@ -14,33 +13,33 @@ namespace EmployeeToDosBackEnd.Controllers
     [ApiController]
     public class ToDoesController : ControllerBase
     {
-        private readonly EmployeeToDosBackEndContext _context;
+        private readonly EmployeeToDosContext _context;
 
-        public ToDoesController(EmployeeToDosBackEndContext context)
+        public ToDoesController(EmployeeToDosContext context)
         {
             _context = context;
         }
 
         // GET: api/ToDoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ToDo>>> GetToDo()
+        public async Task<ActionResult<IEnumerable<ToDo>>> GetToDos()
         {
-          if (_context.ToDo == null)
+          if (_context.ToDos == null)
           {
               return NotFound();
           }
-            return await _context.ToDo.ToListAsync();
+            return await _context.ToDos.ToListAsync();
         }
 
         // GET: api/ToDoes/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ToDo>> GetToDo(int id)
         {
-          if (_context.ToDo == null)
+          if (_context.ToDos == null)
           {
               return NotFound();
           }
-            var toDo = await _context.ToDo.FindAsync(id);
+            var toDo = await _context.ToDos.FindAsync(id);
 
             if (toDo == null)
             {
@@ -86,11 +85,11 @@ namespace EmployeeToDosBackEnd.Controllers
         [HttpPost]
         public async Task<ActionResult<ToDo>> PostToDo(ToDo toDo)
         {
-          if (_context.ToDo == null)
+          if (_context.ToDos == null)
           {
-              return Problem("Entity set 'EmployeeToDosBackEndContext.ToDo'  is null.");
+              return Problem("Entity set 'EmployeeToDosContext.ToDos'  is null.");
           }
-            _context.ToDo.Add(toDo);
+            _context.ToDos.Add(toDo);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetToDo", new { id = toDo.Id }, toDo);
@@ -100,17 +99,17 @@ namespace EmployeeToDosBackEnd.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteToDo(int id)
         {
-            if (_context.ToDo == null)
+            if (_context.ToDos == null)
             {
                 return NotFound();
             }
-            var toDo = await _context.ToDo.FindAsync(id);
+            var toDo = await _context.ToDos.FindAsync(id);
             if (toDo == null)
             {
                 return NotFound();
             }
 
-            _context.ToDo.Remove(toDo);
+            _context.ToDos.Remove(toDo);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -118,7 +117,7 @@ namespace EmployeeToDosBackEnd.Controllers
 
         private bool ToDoExists(int id)
         {
-            return (_context.ToDo?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.ToDos?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
