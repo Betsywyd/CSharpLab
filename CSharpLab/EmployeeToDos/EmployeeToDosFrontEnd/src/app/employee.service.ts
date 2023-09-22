@@ -15,4 +15,10 @@ export class EmployeeService {
     return this.http.get<Employee[]>(this.url)
   }
 
+  deleteEmployee(id:number):Observable<any>{
+    return this.http.delete<Employee>(this.url+"/"+id);
+  }
+
+
+
 }

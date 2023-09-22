@@ -49,6 +49,26 @@ namespace EmployeeToDosBackEnd.Controllers
             return toDo;
         }
 
+        [HttpGet("GetToDosByEmployeeId/{employeeId}")]
+        public List<ToDo> GetToDosByEmployeeId(int employeeId) 
+        {
+            List<ToDo> toDoList = _context.ToDos.Where(t=>t.AssignedTo==employeeId).ToList();
+            if (toDoList.Count ==0)
+            {
+                return null;
+            }
+            
+            else 
+            { 
+                return toDoList;
+            };
+
+
+        }
+
+
+
+
         // PUT: api/ToDoes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

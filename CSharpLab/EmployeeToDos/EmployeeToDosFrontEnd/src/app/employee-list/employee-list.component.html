@@ -1,1 +1,15 @@
-<p>employee-list works!</p>
+<div *ngFor="let e of employees; index as i">
+<p>Id:{{e.id}}</p>
+<p>Name:{{e.name}}</p>
+<p>Hours:{{e.hours}}</p>
+<p>Title:{{e.title}}</p>
+<p>Assigned Task:</p>
+<ul>
+    <li *ngFor="let t of e.toDos">{{t.name}}</li>
+</ul>
+<button (click)="addEmployee()"></button>Add Employee</button>
+<button (click)="deleteEmployee(e.id,i)">Delete {{e.name}}</button> 
+<!-- <button (click)="selectToEdit(e,i)" >Edit {{e.name}}</button>  -->
+
+</div>
+
