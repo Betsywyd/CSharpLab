@@ -32,7 +32,14 @@ ngOnInit():void{
     }
   )
 }
-   
+
+addEmployee(newEmployee:Employee){
+  this.employeeApi.createEmployee(newEmployee).subscribe(
+    ()=>{
+     this.employees.push(newEmployee);
+    }
+  )
+}
 
   
 

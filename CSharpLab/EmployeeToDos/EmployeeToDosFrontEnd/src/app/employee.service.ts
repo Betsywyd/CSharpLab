@@ -15,6 +15,10 @@ export class EmployeeService {
     return this.http.get<Employee[]>(this.url)
   }
 
+  createEmployee(newEmployee:Employee):Observable<any>{
+    return this.http.post<any>(this.url,newEmployee);
+  }
+
   deleteEmployee(id:number):Observable<any>{
     return this.http.delete<Employee>(this.url+"/"+id);
   }
