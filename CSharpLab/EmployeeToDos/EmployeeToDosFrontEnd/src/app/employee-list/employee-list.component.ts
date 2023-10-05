@@ -42,6 +42,13 @@ addEmployee(newEmployee:Employee){
 }
 
   
+deleteEmployee(id:number,index:number){
+  this.employeeApi.deleteEmployee(id).subscribe(
+    ()=>{
+      this.employees.splice(index,1);
+    }
+  )
+}
 
 // getToDosByEmployeeId()
 

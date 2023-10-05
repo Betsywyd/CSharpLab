@@ -108,6 +108,11 @@ namespace EmployeeToDosBackEnd.Controllers
             {
                 return NotFound();
             }
+            List<ToDo> matching = _context.ToDos.Where(x => x.AssignedTo == employee.Id).ToList();
+            if (matching.Count() > 0)
+            {
+                _context.ToDos.RemoveRange(matching);
+            }
 
             _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
