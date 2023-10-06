@@ -1,1 +1,12 @@
-<p>edit-employee works!</p>
+
+
+<p>Name</p>
+<input type="text" [(ngModel)]="editEmployee.name"/>
+
+<p>Hours</p>
+<input type="number" min="1" max="40" [(ngModel)]="editEmployee.hours"/>
+
+<p>Title</p>
+<input type="text" [(ngModel)]="editEmployee.title"/>
+
+<button (click)="doneEditing()">Finish Edits</button>

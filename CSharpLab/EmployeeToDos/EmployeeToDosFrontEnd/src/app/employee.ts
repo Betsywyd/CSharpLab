@@ -10,6 +10,7 @@ export interface Employee {
     hours: number;
     title: string;
     toDos: any[];
+    isEditing?:boolean;
 }
 
 // Converts JSON strings to/from your types

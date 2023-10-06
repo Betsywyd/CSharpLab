@@ -13,6 +13,7 @@ export class EmployeeListComponent {
 
 employees:Employee[]=[];
 toDos:ToDo[]=[];
+// displayEditEmployee:boolean=false;
 
 constructor(private employeeApi:EmployeeService,private toDoApi:ToDosService){
  
@@ -48,6 +49,25 @@ deleteEmployee(id:number,index:number){
       this.employees.splice(index,1);
     }
   )
+}
+
+editEmployee(index:number){
+  for(let i=0;i<=index;i++){
+    if(i==index){
+      this.employees[i].isEditing=true
+       }
+else this.employees[i].isEditing=false;
+  }
+
+}
+
+updateEmployee(newVale:Employee,index:number){
+ 
+ this.employeeApi.updateEmployee(newVale,index).subscribe(
+  ()=>{
+    this.employees[index]=newVale;
+  }
+ )
 }
 
 // getToDosByEmployeeId()

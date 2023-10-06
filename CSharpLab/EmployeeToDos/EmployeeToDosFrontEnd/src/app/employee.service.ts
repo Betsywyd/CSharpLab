@@ -23,6 +23,10 @@ export class EmployeeService {
     return this.http.delete<Employee>(this.url+"/"+id);
   }
 
+  updateEmployee(newVale:Employee,id:number){
+    newVale.id=id;
+    return this.http.put<any>(this.url+"/"+id,newVale);
+  }
 
 
 }
